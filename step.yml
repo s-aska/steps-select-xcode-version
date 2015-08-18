@@ -1,4 +1,4 @@
-name: "Select Xcode version"
+name: "Select Xcode version on branch"
 description: |
   Selects / activates the specified Xcode version.
 
@@ -8,10 +8,10 @@ description: |
 
   Technical note: on Bitrise OS X Virtual Machines the pre-installed Xcode
   versions are located at `/Applications/Xcodes`.
-website: https://github.com/bitrise-io/steps-select-xcode-version
-fork_url: https://github.com/bitrise-io/steps-select-xcode-version
+website: https://github.com/s-aska/steps-select-xcode-version
+fork_url: https://github.com/s-aska/steps-select-xcode-version
 source:
-  git: https://github.com/bitrise-io/steps-select-xcode-version.git
+  git: https://github.com/s-aska/steps-select-xcode-version.git
 host_os_tags:
   - "osx-10.10"
 project_type_tags: ["ios"]
@@ -19,6 +19,13 @@ type_tags:
   - "build"
 is_requires_admin_user: true
 inputs:
+  - mapped_to: SELECT_XCODE_VERSION_TARGET_BRANCH
+    title: "target branch"
+    description: "only specified branch"
+    is_required: true
+    is_expand: false
+    value_options: []
+    is_dont_change_value: false
   -
     mapped_to: SELECT_XCODE_VERSION_CHANNEL_ID
     title: "Xcode version channel ID"

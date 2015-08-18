@@ -36,6 +36,10 @@ function set_xcode_path_by_channel {
     CONFIG_xcode_path="/Applications/Xcodes/Xcode${channel_id}.app"
 }
 
+if [[ "${SELECT_XCODE_VERSION_TARGET_BRANCH}" != "${BITRISE_GIT_BRANCH}" ]] ; then
+  SELECT_XCODE_VERSION_CHANNEL_ID="-stable"
+fi
+
 if [ -z "${SELECT_XCODE_VERSION_CHANNEL_ID}" ] ; then
 	finalcleanup "No Xcode Version Channel ID specified!"
 	exit 1
